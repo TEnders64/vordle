@@ -2,6 +2,7 @@
 ### I'll call it... Vordle, you know, since it's propped up with Vite
 #### Things I think I'll need:
 ##### Tracked Data & Logic:
+**Logic**
 - Pre-determined 5-letter word the user will guess against
 - The user's individual guesses
     - For each guess:
@@ -15,7 +16,7 @@
 - The number of user guesses
     - User is only allowed 6 guesses
         - Display the correct word when user does not guess correctly in allotted attempts
-
+**Data**
 - Initial data structure:
 guess = [
     {
@@ -51,3 +52,10 @@ guess = [
     - AttemptsBoard (presentational)
         - AttemptRow (presentational) -> tied to individual attempt
             - AttemptLetter (presentational) -> tied to individual letter per attempt
+
+##### React Tools:
+- Hooks
+    - useState
+    - useContext
+    - useEffect (maybe for an API to get a 5-letter word onmount)
+- No need for Redux given the small complexity

@@ -17,7 +17,10 @@
     - User is only allowed 6 guesses
         - Display the correct word when user does not guess correctly in allotted attempts
 **Data**
-- Initial data structure:
+- Initial data structures:
+```js
+word = "abcde"; // pulled from Wordnik
+
 guess = [
     {
         letter: string;
@@ -45,8 +48,10 @@ guess = [
         inCorrectPosition: boolean;
     },
 ]
+```
+
 ##### Components:
-- GameLoop (state manager)
+- GameLoop (state manager -- may leave in App component)
     - Keyboard (presentational)
         - Individual Keys (presentational)
     - AttemptsBoard (presentational)
@@ -56,6 +61,20 @@ guess = [
 ##### React Tools:
 - Hooks
     - useState
-    - useContext
-    - useEffect (maybe for an API to get a 5-letter word onmount)
+    - useContext (for more practice and less prop drilling)
+    - useEffect (to fetch a 5-letter word onmount from [Wordnik API](https://developer.wordnik.com/))
 - No need for Redux given the small complexity
+
+##### Future Features:
+- Allow for page reload without losing progress
+- Allow only one word a day
+    - Run a github action 12:00am Pacific to get a new word from Wordnik
+- Separate out game modes:
+    - Reset button to let the user play multiple words a day
+    - Traditional (see one-word-a-day above)
+- Supporting Returning Users
+    - Streaks
+    - Statistics
+    - Reminders to play
+
+
